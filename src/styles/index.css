@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  background: #05070d;
+  color: #e6f6ff;
+}
+
+code {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* ===== THEME PAR DEFAUT ===== */
+
+:root {
+  --bg: #05070d;
+  --bg-soft: #0b1220;
+  --text: #e6f6ff;
+  --primary: #00f0ff;
+  --secondary: #ff31d9;
+  --card: #0c1626;
+  --border: #1e2a44;
+  --glow: rgba(0, 240, 255, 0.6);
+  --glow-secondary: rgba(255, 49, 217, 0.6);
+  --header-bg: rgba(4, 8, 16, 0.95);
+  --header-border: #1e2a44;
+  --radius: 14px;
+  --page-max: 1100px;
+}
+
+/* ===== ZIKEOLARGE : Bleu / Violet / Vert d'eau ===== */
+.ocean-mode {
+  --bg: #05121f;
+  --bg-soft: #0a1f2d;
+  --text: #dff7ff;
+  --primary: #00d1ff;
+  --secondary: #7c5cff;
+  --card: #0b1a29;
+  --border: #1b3a4b;
+  --glow: rgba(0, 209, 255, 0.55);
+  --glow-secondary: rgba(127, 220, 200, 0.55);
+}
+
+/* ===== MAYA : Jaune + Noir ===== */
+.maya-mode {
+  --bg: #0c0c0c;
+  --bg-soft: #141414;
+  --text: #fff6b5;
+  --primary: #ffd000;
+  --secondary: #ffe066;
+  --card: #121212;
+  --border: #2b2b2b;
+  --glow: rgba(255, 208, 0, 0.6);
+  --glow-secondary: rgba(255, 224, 102, 0.55);
+}
+
+/* ===== EOLIENNE : Vert + Marron ===== */
+.eolienne-mode {
+  --bg: #0b1a12;
+  --bg-soft: #122219;
+  --text: #e9f7ef;
+  --primary: #4ade80;
+  --secondary: #a16207;
+  --card: #102016;
+  --border: #264233;
+  --glow: rgba(74, 222, 128, 0.55);
+  --glow-secondary: rgba(161, 98, 7, 0.5);
+  --header-bg: #0f2a1b;
+  --header-border: #2d5a3f;
+}
+
+/* ===== OBLIQUE : Gris + Elements Penches ===== */
+.oblique-mode {
+  --bg: #111317;
+  --bg-soft: #1a1d22;
+  --text: #e6e9ef;
+  --primary: #9aa4b2;
+  --secondary: #cbd5e1;
+  --card: #15181d;
+  --border: #2a2f36;
+  --glow: rgba(154, 164, 178, 0.45);
+  --glow-secondary: rgba(203, 213, 225, 0.4);
+}
+
+/* ===== NUIT : Bleu + Blanc ===== */
+.nuit-mode {
+  --bg: #050b18;
+  --bg-soft: #0b1630;
+  --text: #f3f8ff;
+  --primary: #4f8fff;
+  --secondary: #dbeafe;
+  --card: #0d1a33;
+  --border: #1f3354;
+  --glow: rgba(79, 143, 255, 0.55);
+  --glow-secondary: rgba(219, 234, 254, 0.45);
+}
+
+/* ===== AUTOMNE : Orange + Marron ===== */
+.automne-mode {
+  --bg: #1b0f08;
+  --bg-soft: #2f1a0f;
+  --text: #ffe7cc;
+  --primary: #ff8a1f;
+  --secondary: #ff6a00;
+  --card: #24140b;
+  --border: #5a2f16;
+  --glow: rgba(255, 138, 31, 0.6);
+  --glow-secondary: rgba(255, 106, 0, 0.55);
+  --header-bg: #3a1f0f;
+  --header-border: #6a3a1c;
+}
+
+/* ===== Orgie : Noir + Orange ===== */
+.orgie-mode {
+  --bg: #0b0b0b;
+  --bg-soft: #151515;
+  --text: #f6f6f6;
+  --primary: #ff9000;
+  --secondary: #ffb000;
+  --card: #141414;
+  --border: #2a2a2a;
+  --glow: rgba(255, 144, 0, 0.6);
+  --glow-secondary: rgba(255, 176, 0, 0.55);
+}
+
+/* ===== OBLIQUE : Effet penche ===== */
+.oblique-mode .card,
+.oblique-mode .panel,
+.oblique-mode .page__section,
+.oblique-mode .btn {
+  transform: skew(-3deg);
+}
+
+.oblique-mode .page__title,
+.oblique-mode .site-header__link {
+  transform: skew(-6deg);
+}
+
+/* ===== STRUCTURE ===== */
+
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0, 240, 255, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(255, 49, 217, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-soft));
+  color: var(--text);
+}
+
+.page__content {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+.page__title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  text-shadow:
+    0 0 6px var(--glow),
+    0 0 20px var(--glow);
+  margin: 0 0 24px;
+}
+
+.page__section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.panel {
+  padding: 22px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.4);
+}
+
+.panel__title {
+  margin: 0 0 18px;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--glow);
+}
+
+.panel__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.panel__item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(8, 16, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #001018;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(8, 14, 24, 0.9);
+  color: var(--text);
+  outline: none;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary), 0 0 12px var(--glow);
+}
