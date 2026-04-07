@@ -1,12 +1,12 @@
-.site-footer {
-    margin-top: 60px;
+.footer {
+    margin-top: 40px;
     padding: 40px 20px;
-    background: linear-gradient(180deg, rgba(6, 9, 16, 0.92), rgba(6, 9, 16, 0.65));
+    background: linear-gradient(180deg, rgba(6, 9, 16, 1), rgba(6, 9, 16, 1));
     text-align: center;
     border-top: 1px solid var(--border);
 }
 
-.site-footer__title {
+.footer__title {
     color: var(--primary);
     font-size: 1.2rem;
     margin-bottom: 12px;
@@ -15,7 +15,7 @@
         0 0 14px var(--glow);
 }
 
-.site-footer__form {
+.footer__form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,12 +24,12 @@
     margin: 0 auto;
 }
 
-.site-footer__input {
+.footer__input {
     min-height: 48px;
     resize: none;
 }
 
-.site-footer__note {
+.footer__note {
     margin-top: 18px;
     font-size: 0.8rem;
     color: rgba(230, 246, 255, 0.6);

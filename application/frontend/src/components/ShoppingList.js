@@ -1,5 +1,6 @@
 import '../styles/ShoppingList.css';
 import { itemList } from '../datas/itemList';
+import { useState, useEffect } from 'react';
 
 
 function ShoppingList({ cart, updateCart }) {
@@ -15,6 +16,14 @@ function ShoppingList({ cart, updateCart }) {
     }
   }
 
+  const [itemsList, setItemsList] = useState(itemList);
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/')
+  //     .then(response => response.json())
+  //     .then(data => setItemsList(data))
+  //     .catch(error => console.error('Erreur lors de la récupération des données :', error));
+  // }, []);
+
   return (
     <div className="catalog">
       <div className="catalog__header">
@@ -22,10 +31,12 @@ function ShoppingList({ cart, updateCart }) {
           <h2 className="catalog__title">Boutique</h2>
           <p className="catalog__subtitle">Selection neon du moment</p>
         </div>
-        <div className="catalog__meta">{itemList.length} articles</div>
+        <div className="catalog__meta">{itemsList.length} articles</div>
       </div>
+
+      {/* Affichage de la liste des articles */}
       <ul className="catalog__grid">
-        {itemList.map((item) => (
+        {itemsList.map((item) => (
           <li className='catalog__card' key={item.id ?? item.name}>
             <div className="catalog__media">
               {item.cover ? (

@@ -20,18 +20,18 @@ function Footer() {
     }
 
     return (
-        <footer className="site-footer">
-            <form className="site-footer__form">
-                <div className="site-footer__title">Laissez-nous votre email</div>
+        <footer className="footer">
+            <form className="footer__form">
+                <div className="footer__title">Laissez-nous votre email</div>
                 <textarea
-                    className="input site-footer__input"
+                    className="input footer__input"
                     value={inputValue}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder="Entrez votre email"
                 />
                 <button className="btn" onClick={handleSubmit}>Envoyer</button>
-                <div className="site-footer__note">© 2026 Zikeo</div>
+                <div className="footer__note">© 2026 Zikeo</div>
             </form>
         </footer>
     )

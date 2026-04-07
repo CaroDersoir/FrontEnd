@@ -1,11 +1,11 @@
 .header {
-  background: linear-gradient(180deg, var(--header-bg), rgba(4, 8, 16, 0.7));
+  background: linear-gradient(180deg, rgba(6, 9, 16, 1), rgba(6, 9, 16, 1));
   border-bottom: 1px solid var(--header-border);
   padding: 18px 16px;
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(6px);
+  backdrop-filter: opacity(100%); /*pour gérer l'affichage sous le composant*/
 }
 
 .oblique-mode .header {
@@ -44,6 +44,8 @@
 }
 
 .header__link {
+  flex: 0 0 20%;
+  text-align: center;
   font-family: 'Orbitron', 'Rajdhani', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.12em;
@@ -71,12 +73,27 @@
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.header--scrolled {
+  height: 120px;
+  padding: 10px 10px;
+}
+
+.header--scrolled .header__layout {
+  gap : 6px;
+}
+
 .header--scrolled .header__logo {
   transform: translateX(-28px);
+  width: 200px;
+
 }
 
 .header--scrolled .header__logo-wrap {
   justify-content: flex-start;
+}
+
+.header--scrolled .header__nav {
+  flex-wrap: nowrap;
 }
 
 @media (max-width: 1000px) {

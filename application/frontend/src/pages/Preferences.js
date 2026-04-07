@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useState, useContext } from 'react';
+import {useState, useContext, useEffect} from 'react';
 import { PreferencesContext } from '../context/indexContext';
 import '../styles/Preferences.css';
 
@@ -30,8 +30,9 @@ function Preferences() {
                             <input
                                 type="radio"
                                 name="theme"
+                                value={theme.id}
                                 checked={mode === theme.id}
-                                onChange={() => setMode(theme.id)}
+                                onChange= {() => setMode(theme.id)}
                             />
                             <span>{theme.label}</span>
                             <span className="preferences__badge">{theme.hashtag}</span>

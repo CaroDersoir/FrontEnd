@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../application/backend
+    container_name: backend
+    volumes:
+      - ../application/backend:/app
+      - /application/backend/node_modules
+    ports:
+      - "3001:3001"
+  
+  frontend:
+    build:
+      context: ../application/frontend
+    container_name: frontend
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - ../application/frontend:/app
+      - /application/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: essai
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8080:80"
+  

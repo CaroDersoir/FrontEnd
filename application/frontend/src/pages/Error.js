@@ -3,7 +3,7 @@ import Header from "../components/Header"
 
 function Error() {
     return (
-        <div className="page page--error">
+        <div className="page">
             <Header />
             <main className="page__content">
                 <h1 className="page__title">Erreur 404</h1>

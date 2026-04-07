@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function Detail() {
     return (
-        <div className="page page--detail">
+        <div className="page">
             <Header />
             <main className="page__content">
                 <ItemDetail />

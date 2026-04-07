@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 function Formations() {
     return (
-        <div className="page page--formations">
+        <div className="page">
             <Header />
             <main className="page__content">
                 <h1 className="page__title">Formations</h1>
