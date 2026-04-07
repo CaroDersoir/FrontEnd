@@ -11,7 +11,6 @@ const themes = [
     { id: "oblique", label: "Zikéoblique", hashtag: "#PencheDansLeSpectre" },
     { id: "nuit", label: "Zikéolit", hashtag: "#SousLaLune" },
     { id: "automne", label: "Zikéotomne", hashtag: "#FeuillesMortesEtMusique" },
-    { id: "orgie", label: "Zikéorgie", hashtag: "#HorsNormes" }
 ];
 
 function Preferences() {
